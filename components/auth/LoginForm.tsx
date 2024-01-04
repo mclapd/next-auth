@@ -22,7 +22,7 @@ import FormError from "@/components/FormError";
 import FormSuccess from "@/components/FormSuccess";
 import { login } from "@/actions/login";
 
-const LoginForm = () => {
+export const LoginForm = () => {
   const [error, setError] = useState<string | undefined>("");
   const [success, setSuccess] = useState<string | undefined>("");
 
@@ -36,12 +36,12 @@ const LoginForm = () => {
     },
   });
 
-  const onSubmit = (value: z.infer<typeof LoginSchema>) => {
+  const onSubmit = (values: z.infer<typeof LoginSchema>) => {
     setError("");
     setSuccess("");
 
     startTransition(() => {
-      login(value).then((data) => {
+      login(values).then((data) => {
         if (data?.error) {
           setError(data.error);
         }
@@ -58,7 +58,7 @@ const LoginForm = () => {
       headerLabel="Welcome back"
       backButtonLabel="Don't have an account?"
       backButtonHref="/auth/register"
-      showSocial={true}
+      showSocial
     >
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
