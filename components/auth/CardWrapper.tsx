@@ -3,8 +3,8 @@
 import {
   Card,
   CardContent,
-  CardHeader,
   CardFooter,
+  CardHeader,
 } from "@/components/ui/card";
 import { Header } from "@/components/auth/Header";
 import Social from "@/components/auth/Social";
@@ -17,6 +17,7 @@ interface CardWrapperProps {
   backButtonHref: string;
   showSocial?: boolean;
 }
+
 const CardWrapper = ({
   children,
   headerLabel,

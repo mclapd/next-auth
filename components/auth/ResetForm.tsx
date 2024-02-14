@@ -20,7 +20,6 @@ import { Button } from "@/components/ui/button";
 import FormError from "@/components/FormError";
 import FormSuccess from "@/components/FormSuccess";
 import { reset } from "@/actions/reset";
-import Link from "next/link";
 
 export const ResetForm = () => {
   const [error, setError] = useState<string | undefined>("");

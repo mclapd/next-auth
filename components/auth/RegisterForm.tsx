@@ -37,12 +37,12 @@ const RegisterForm = () => {
     },
   });
 
-  const onSubmit = (value: z.infer<typeof RegisterSchema>) => {
+  const onSubmit = (values: z.infer<typeof RegisterSchema>) => {
     setError("");
     setSuccess("");
 
     startTransition(() => {
-      register(value).then((data) => {
+      register(values).then((data) => {
         setError(data.error);
         setSuccess(data.success);
       });
@@ -54,7 +54,7 @@ const RegisterForm = () => {
       headerLabel="Create an account"
       backButtonLabel="Already have an account?"
       backButtonHref="/auth/login"
-      showSocial={true}
+      showSocial
     >
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">

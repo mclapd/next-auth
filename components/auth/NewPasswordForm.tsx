@@ -22,7 +22,7 @@ import FormError from "@/components/FormError";
 import FormSuccess from "@/components/FormSuccess";
 import { newPassword } from "@/actions/new-password";
 
-export const NewPasswordForm = () => {
+const NewPasswordForm = () => {
   const searchParams = useSearchParams();
   const token = searchParams.get("token");
 
@@ -87,3 +87,5 @@ export const NewPasswordForm = () => {
     </CardWrapper>
   );
 };
+
+export default NewPasswordForm;
