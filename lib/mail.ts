@@ -7,8 +7,6 @@ const domain = process.env.NEXT_PUBLIC_APP_URL;
 export const sendPasswordResetEmail = async (email: string, token: string) => {
   const resetLink = `${domain}/auth/new-password?token=${token}`;
 
-  console.log("email:", email);
-
   await resend.emails.send({
     from: "mail@auth-masterclass-tutorial.com",
     to: email,
